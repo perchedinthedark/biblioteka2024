@@ -41,7 +41,6 @@ public class Biblioteka implements BibliotekaInterfejs {
 		if (autor == null && isbn == 0 && naslov == null && izdavac == null)
 			throw new IllegalArgumentException("Morate uneti bar jedan kriterijum");
 		
-		
 		List<Knjiga> rezultati = new ArrayList<Knjiga>();
 
 		for (Knjiga k : knjige)
