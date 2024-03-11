@@ -1,16 +1,25 @@
 package biblioteka;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import biblioteka.interfejs.BibliotekaInterfejs;
+import util.VremenskiServis;
 
 public class Biblioteka implements BibliotekaInterfejs {
 	
 	private List<Knjiga> knjige = new ArrayList<Knjiga>();
 
+	
+	private VremenskiServis s = new VremenskiServis();
+
+	public Biblioteka(VremenskiServis s) {
+		this.s = s;
+	}
+	
 	@Override
-	public void dodajKnjigu(Knjiga k) {
+	public LocalDateTime dodajKnjigu(Knjiga k) {
 		if (k == null)
 			throw new NullPointerException("Knjiga ne sme biti null");
 		
@@ -18,10 +27,13 @@ public class Biblioteka implements BibliotekaInterfejs {
 			throw new IllegalArgumentException("Knjiga vec postoji u bilioteci");
 		
 		knjige.add(k);
+		
+		
+		return s.VratiVreme("Beograd");
 	}
 
 	@Override
-	public void obrisiKnjigu(Knjiga k) {
+	public LocalDateTime obrisiKnjigu(Knjiga k) {
 		if (k == null)
 			throw new NullPointerException("Knjiga ne sme biti null");
 		
@@ -29,6 +41,8 @@ public class Biblioteka implements BibliotekaInterfejs {
 			throw new IllegalArgumentException("Knjiga ne postoji u bilioteci");	
 		
 		knjige.remove(k);
+		
+		return s.VratiVreme("Beograd");
 	}
 
 	@Override
