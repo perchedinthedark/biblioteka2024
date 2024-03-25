@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="C:/Users/student2/Desktop/easymock-5.2.0/original-easymock-5.2.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/student2/Desktop/easymock-5.2.0/original-easymock-5.2.0-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/student2/Desktop/easymock-5.2.0/objenesis-3.3.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.10.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
